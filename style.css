@@ -855,6 +855,35 @@ p {
   }
 }
 
+@media (max-width: 700px) {
+  .skills-section {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+  }
+
+  .skill-category {
+    grid-template-columns: 1fr;
+    gap: 0.8rem;
+
+    padding: 1.25rem 0;
+  }
+
+  .skill-category h3 {
+    font-size: 0.85rem;
+  }
+
+  .skill-category ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.55rem 1rem;
+  }
+
+  .skill-category li {
+    font-size: 0.95rem;
+    line-height: 1.4;
+  }
+}
+
 /* Very small phones */
 @media (max-width: 420px) {
   :root {
