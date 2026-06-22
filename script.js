@@ -33,15 +33,18 @@ updateActiveNavLink();
 const navToggle = document.querySelector(".nav-toggle");
 const navMenu = document.querySelector(".nav-links");
 
-navToggle.addEventListener("click", () => {
-  const menuIsOpen = navMenu.classList.toggle("is-open");
+if (navToggle && navMenu) {
+  navToggle.addEventListener("click", () => {
+    navMenu.classList.toggle("is-open");
 
-  navToggle.setAttribute("aria-expanded", String(menuIsOpen));
-});
-
-navLinks.forEach((link) => {
-  link.addEventListener("click", () => {
-    navMenu.classList.remove("is-open");
-    navToggle.setAttribute("aria-expanded", "false");
+    const menuIsOpen = navMenu.classList.contains("is-open");
+    navToggle.setAttribute("aria-expanded", String(menuIsOpen));
   });
-});
+
+  navLinks.forEach((link) => {
+    link.addEventListener("click", () => {
+      navMenu.classList.remove("is-open");
+      navToggle.setAttribute("aria-expanded", "false");
+    });
+  });
+}
