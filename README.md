@@ -8,7 +8,7 @@ The design uses a dark editorial style with an orange accent color, numbered sec
 
 ## Live Demo
 
-Live site: Coming soon
+Live site: https://www.alrizeiqi.com
 
 ## Features
 
