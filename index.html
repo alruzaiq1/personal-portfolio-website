@@ -4,13 +4,17 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Mohammed Al Rizeiqi | AI Student Portfolio</title>
+  <meta name="description" content="Mohammed Al Rizeiqi, Artificial Intelligence student at GUtech. Exploring software, data, and AI through practical projects.">
+  <meta name="theme-color" content="#0a0a09">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
+  <a class="skip-link" href="#main">Skip to content</a>
   <header class="site-header">
   <nav class="navbar" aria-label="Main navigation">
-    <a href="#hero" class="nav-logo">Mohammed Al Rizeiqi</a>
+    <a href="#hero" class="nav-logo"><span class="logo-mark" aria-hidden="true">m.</span><span>Mohammed<br>Al Rizeiqi</span></a>
 
     <button
       class="nav-toggle"
@@ -23,60 +27,142 @@
     </button>
 
     <ul id="primary-navigation" class="nav-links">
+      <li><a href="#projects">Projects</a></li>
       <li><a href="#about">About</a></li>
       <li><a href="#skills">Skills</a></li>
-      <li><a href="#projects">Projects</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
   </nav>
 </header>
 
-  <main class="site-main">
+  <main id="main" class="site-main" tabindex="-1">
     <section id="hero" class="hero-section">
       <div class="hero-content">
-        <p class="hero-label">Artificial Intelligence Student - GUtech</p>
+        <p class="hero-label"><span class="status-dot" aria-hidden="true"></span> Artificial Intelligence Student · GUtech</p>
 
-        <h1>Hi, I’m Mohammed.</h1>
+        <p class="hero-greeting">Hi, I’m Mohammed.</p>
+        <h1>Curiosity.<br>Code.<br><span>Possibility.</span></h1>
 
         <p class="hero-description">
-          Welcome to my space. 
+          Learning to turn ideas into useful software.<br>Exploring the space between data and intelligence.
         </p>
 
         <div class="hero-links">
-          <a href="#projects">View Projects</a>
-          <a href="#contact">Contact Me</a>
+          <a href="#projects">Explore my work <span aria-hidden="true">↗</span></a>
+          <a href="#contact">Let’s connect <span aria-hidden="true">↗</span></a>
+        </div>
+      </div>
+      <div class="hero-art">
+        <canvas id="particle-field" aria-hidden="true"></canvas>
+        <div class="orbit-fallback" aria-hidden="true"></div>
+        <p class="art-caption" aria-hidden="true">Fig. 01 / A field of possibilities</p>
+        <button class="motion-toggle" type="button" hidden>Pause animation</button>
+      </div>
+      <div class="hero-bottom"><span>Personal portfolio / 2026</span><a href="#projects">Scroll to explore <span aria-hidden="true">↓</span></a></div>
+    </section>
+
+    <section id="projects" class="projects-section page-section">
+      <div class="section-content">
+        <div class="section-header">
+          <p class="section-label" aria-hidden="true">01</p>
+          <h2>Projects</h2>
+        </div>
+
+        <p class="section-intro">A record of what I have built so far and the projects I plan to explore next.</p>
+
+        <article class="featured-project panel-card">
+          <figure class="project-preview">
+            <img src="screenshots/home-desktop.png" width="1900" height="921" loading="lazy" decoding="async" alt="Desktop view of the first iteration of Mohammed Al Rizeiqi's portfolio website">
+            <figcaption>First iteration — an early desktop view of this portfolio website.</figcaption>
+          </figure>
+
+          <div class="project-body">
+            <p class="project-meta">Featured project</p>
+            <p class="project-status">In progress</p>
+            <h3>Personal Portfolio Website</h3>
+            <p>A personal portfolio built with plain HTML, CSS, and JavaScript, and refined as I learn more about web development.</p>
+            <ul class="project-tech-list">
+              <li>HTML</li>
+              <li>CSS</li>
+              <li>JavaScript</li>
+            </ul>
+            <div class="project-actions">
+              <a href="https://www.alrizeiqi.com" target="_blank" rel="noopener noreferrer">Visit site</a>
+              <a href="https://github.com/alruzaiq1/personal-portfolio-website" target="_blank" rel="noopener noreferrer">View repository</a>
+            </div>
+          </div>
+        </article>
+
+        <div class="project-grid">
+          <article class="project-card panel-card">
+            <p class="project-number" aria-hidden="true">02</p>
+            <div class="project-body">
+              <p class="project-status">Planned</p>
+              <h3>Study Task Tracker</h3>
+              <p>A prospective tool for organizing study tasks and keeping a simple record of progress.</p>
+              <ul class="project-tech-list">
+                <li>Python</li>
+                <li>Streamlit</li>
+                <li>CSV storage</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="project-card panel-card">
+            <p class="project-number" aria-hidden="true">03</p>
+            <div class="project-body">
+              <p class="project-status">Planned</p>
+              <h3>Oman Road Safety Insights Dashboard</h3>
+              <p>A prospective dashboard for exploring road-safety data through clear, accessible visualizations.</p>
+              <ul class="project-tech-list">
+                <li>Python</li>
+                <li>Pandas</li>
+                <li>Data visualization</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="project-card panel-card">
+            <p class="project-number" aria-hidden="true">04</p>
+            <div class="project-body">
+              <p class="project-status">Planned</p>
+              <h3>AI Powered Personal Finance Dashboard</h3>
+              <p>A prospective personal-finance dashboard for practicing data organization and AI-related ideas.</p>
+              <ul class="project-tech-list">
+                <li>Python</li>
+                <li>Pandas</li>
+                <li>Streamlit</li>
+              </ul>
+            </div>
+          </article>
         </div>
       </div>
     </section>
 
     <section id="about" class="about-section page-section">
-      <div class="section-content">
+      <div class="section-content about-layout">
         <div class="section-header">
-          <p class="section-label" aria-hidden="true">01</p>
+          <p class="section-label" aria-hidden="true">02</p>
           <h2>About Me</h2>
         </div>
 
-        <p>
-          I am an Artificial Intelligence student learning how to build practical
-          software projects.
-        </p>
+        <div class="about-copy">
+          <p class="section-intro">I am an undergraduate Artificial Intelligence student at GUtech, learning how to turn ideas into practical software.</p>
+          <p>I use small projects to develop my skills in programming, web development, data, and AI concepts.</p>
+        </div>
 
-        <p>
-          This website will be a reflection of my journey in the field.
-        </p>
+        <p class="about-note">This portfolio documents that learning process as it develops.</p>
       </div>
     </section>
 
     <section id="skills" class="skills-section page-section">
       <div class="section-content">
         <div class="section-header">
-          <p class="section-label" aria-hidden="true">02</p>
+          <p class="section-label" aria-hidden="true">03</p>
           <h2>Skills</h2>
         </div>
 
-        <p>
-          These are the main tools and topics I am currently learning and using in my projects.
-        </p>
+        <p class="section-intro">Tools and topics I am currently learning and using in projects.</p>
 
         <div class="skills-list">
           <article class="skill-category panel-card">
@@ -116,67 +202,11 @@
       </div>
     </section>
 
-    <section id="projects" class="projects-section page-section">
-      <div class="section-content">
-        <div class="section-header">
-          <p class="section-label" aria-hidden="true">03</p>
-          <h2>Projects</h2>
-        </div>
-
-        <p>
-          These are the projects I am building to practice web development,
-          programming, data analysis, and AI concepts.
-        </p>
-
-        <div class="project-grid">
-
-          <article class="project-card panel-card">
-            <p class="project-status">Planned</p>
-            <h3>Study Task Tracker</h3>
-            <p>
-              <!-- Placeholder - Description -->
-            </p>
-            <ul class="project-tech-list">
-              <li>Python</li>
-              <li>Streamlit</li>
-              <li>CSV storage</li>
-            </ul>
-          </article>
-
-          <article class="project-card panel-card">
-            <p class="project-status">Planned</p>
-            <h3>Oman Road Safety Insights Dashboard</h3>
-            <p>
-              <!-- Placeholder - Description -->
-            </p>
-            <ul class="project-tech-list">
-              <li>Python</li>
-              <li>Pandas</li>
-              <li>Data visualization</li>
-            </ul>
-          </article>
-
-          <article class="project-card panel-card">
-            <p class="project-status">Planned</p>
-            <h3>AI Powered Personal Finance Dashboard</h3>
-            <p>
-              <!-- Placeholder - Description -->
-            </p>
-            <ul class="project-tech-list">
-              <li>Python</li>
-              <li>Pandas</li>
-              <li>Streamlit</li>
-            </ul>
-          </article>
-        </div>
-      </div>
-    </section>
-
     <section id="contact" class="contact-section page-section">
       <div class="section-content">
         <div class="section-header">
           <p class="section-label" aria-hidden="true">04</p>
-          <h2>Contact</h2>
+          <h2>Let’s build<br><span>what’s next.</span></h2>
         </div>
 
         <p>
@@ -202,7 +232,7 @@
   </main>
 
   <footer class="site-footer">
-    <p>&copy; 2026 Mohammed Al Rizeiqi. Built with HTML, CSS, and JavaScript.</p>
+    <p>&copy; 2026 Mohammed Al Rizeiqi.</p><a href="#hero">Back to top ↑</a><p>Built with curiosity &amp; code.</p>
   </footer>
 
   <script src="script.js"></script>
