@@ -1,109 +1,52 @@
-# Personal Portfolio Website
+# Mohammed Al Rizeiqi — Personal Portfolio
 
-## Overview
+A vanilla HTML, CSS, and JavaScript portfolio documenting my learning as an Artificial Intelligence student at GUtech.
 
-This is my personal portfolio website built with HTML, CSS, and basic JavaScript. It introduces who I am, the skills I am currently learning, and the projects I am building as an Artificial Intelligence student.
+[Production website](https://www.alrizeiqi.com) · [Design and implementation notes](docs/design-notes.md)
 
-The design uses a dark editorial style with an orange accent color, numbered section labels, archive-style project rows, and a CSS-based dot-wave hero visual.
+This iteration evolves the original dark/orange portfolio with oversized typography, a pointer-responsive particle field, a featured project, and an editorial archive of planned work. The production URL reflects the deployed branch; changes on this branch are a preview until merged and deployed.
 
-## Live Demo
+## Run locally
 
-Live site: https://www.alrizeiqi.com
+Open `index.html` directly in a modern browser, or use VS Code Live Server. No package installation or build step is required.
 
 ## Features
 
-* Sticky navigation header
-* Responsive layout for desktop, tablet, and mobile screens
-* Mobile menu button for small screens
-* Active navigation highlight while scrolling
-* Hero section with CSS dot-wave visual
-* About section
-* Skills section
-* Projects section
-* Contact section with GitHub, LinkedIn, and email links
-* Clean dark/orange editorial visual style
+- Responsive desktop, tablet, and mobile compositions.
+- Lightweight 2D canvas particle artwork with a static CSS fallback.
+- Pause/play control, reduced-motion support, and animation suspension offscreen or in background tabs.
+- Keyboard-accessible mobile menu with Escape handling and active-section navigation.
+- Featured portfolio project with real links; three future projects explicitly marked Planned.
+- Visible keyboard focus, skip link, semantic sections, and lazy-loaded project image with reserved dimensions.
+- System font stacks: no remote font requests or animation dependencies.
 
-## Tech Stack
+## Structure
 
-* HTML
-* CSS
-* JavaScript
-* Git
-* GitHub
+- `index.html`: content, semantic sections, links, and decorative canvas.
+- `style.css`: design tokens, navigation, hero, projects, supporting sections, responsive rules, and reduced motion.
+- `script.js`: navigation and particle animation in a private function scope.
+- `tests/interactions.test.cjs`: dependency-free interaction regression checks.
+- `docs/design-notes.md`: reference audit, design decisions, and explanations.
+- `screenshots/`: original portfolio screenshots; the featured image is explicitly labeled as the first iteration.
+- `CNAME`: existing GitHub Pages custom domain.
 
-## Screenshots
+## Validation
 
-### Desktop
+With Node.js installed:
 
-![Desktop screenshot](screenshots/home-desktop.png)
-
-### Mobile
-
-![Mobile screenshot](screenshots/home-mobile.png)
-
-## How to Run Locally
-
-1. Clone the repository:
-
-```bash
-git clone https://github.com/alruzaiq1/personal-portfolio-website.git
+```sh
+node --check script.js
+node --test tests/interactions.test.cjs
 ```
 
-2. Open the project folder:
+The regression checks cover section ordering, mobile menu state/focus, reduced motion, the pause control, and animation suspension. They use browser stubs and complement visual browser checks; they do not replace a screen-reader or cross-browser audit.
 
-```bash
-cd personal-portfolio-website
-```
+## How the animation works
 
-3. Open `index.html` in a browser.
+The canvas is decorative. JavaScript projects points on a gently changing torus into 2D, sorts them by depth, and draws orange dots. `requestAnimationFrame` follows the browser's paint cycle. Pointer events adjust the viewing angle; `ResizeObserver` keeps the canvas sized to its container. `IntersectionObserver` and page visibility events stop rendering when it cannot be seen. Mobile uses fewer points and pixel density is capped at 1.5.
 
-You can also use the Live Server extension in Visual Studio Code.
+If JavaScript is unavailable, the CSS dotted ellipse remains visible, all content stays readable, and mobile navigation stays expanded. If reduced motion is requested, the canvas draws a still frame and its motion control is hidden.
 
-## Project Structure
+## Next content improvements
 
-```text
-personal-portfolio-website/
-├── index.html
-├── style.css
-├── script.js
-├── README.md
-├── .gitignore
-└── screenshots/
-```
-
-## What I Learned
-
-While building this project, I practiced:
-
-* Writing semantic HTML sections
-* Structuring a static website with `header`, `main`, `section`, and `footer`
-* Styling a responsive layout with CSS
-* Using CSS variables for colors, spacing, and consistent design
-* Creating a custom visual effect with CSS pseudo-elements
-* Building a mobile navigation menu with JavaScript
-* Updating navigation link styles based on scroll position
-* Debugging layout issues using browser developer tools
-* Using Git and GitHub to track project progress
-
-## Challenges
-
-Some parts of the project required extra debugging and cleanup:
-
-* Making the mobile navigation menu open and close correctly
-* Fixing duplicate navigation markup in the HTML
-* Making the active navigation underline update correctly while scrolling
-* Ensuring the Contact section becomes active at the bottom of the page
-* Cleaning overlapping responsive CSS after adding the mobile menu
-* Keeping the design distinctive without adding frameworks, canvas, WebGL, or complex animations
-
-## Future Improvements
-
-* Add real project links when the planned projects are completed
-* Add project screenshots
-* Add a downloadable CV
-* Improve accessibility with more detailed testing
-* Update the portfolio as new projects are finished
-
-## Status
-
-The portfolio website is complete as a first version and ready for deployment with GitHub Pages.
+Replace the first-iteration screenshot when a new portfolio image is ready. Add real screenshots, outcomes, repositories, and live links as the planned projects are built. Do not present planned work as completed. Deeper case-study pages can follow once there is a process and result to document.
